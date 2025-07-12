@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Profile - Complete Your Profile</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-auth-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-firestore-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-storage-compat.min.js"></script>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❤️ Complete Your Profile</h1>
+            <p>Let's make your profile shine and find your perfect match!</p>
+        </div>
+
+        <div class="profile-content">
+            <!-- User Authentication Info -->
+            <div class="user-info" id="userInfo">
+                <h4>Welcome Back!</h4>
+                <p id="userEmail">Email: Loading...</p>
+                <p id="userJoined">Member since: Loading...</p>
+                <span id="profileSavedBadge" style="display:none; background:#6b9dff; color:#fff; padding:4px 12px; border-radius:8px; font-size:13px; margin-left:8px;">Profile Saved</span>
+                <button id="editProfileBtn" type="button" style="display:none; margin-top:10px; background:#ff6b9d; color:#fff; border:none; border-radius:6px; padding:6px 16px; cursor:pointer;">Edit Profile</button>
+            </div>
+
+            <!-- Profile Photo Section -->
+            <div class="profile-photo-section">
+                <div class="photo-upload-container">
+                    <img id="profilePhoto" class="profile-photo" style="display: none;" alt="Profile Photo">
+                    <div id="photoPlaceholder" class="photo-placeholder">
+                        <span style="font-size: 3em;">📸</span>
+                    </div>
+                </div>
+                <br>
+                <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('photoInput').click()">
+                    📷 Upload Photo
+                </button>
+            </div>
+
+            <!-- Profile Information Form -->
+            <form id="profileForm">
+                <div class="form-section">
+                    <h3>📝 Basic Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="displayName">Display Name</label>
+                        <input type="text" id="displayName" name="displayName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="18" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="City, State" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..." required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>💝 Interests & Hobbies</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Select your interests to help find compatible matches</p>
+                    
+                    <div class="interests-grid" id="interestsGrid">
+                        <!-- Interests will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>💕 Relationship Preferences</h3>
+                    
+                    <div class="form-group">
+                        <label for="lookingFor">Looking For</label>
+                        <select id="lookingFor" name="lookingFor" required>
+                            <option value="">What are you looking for?</option>
+                            <option value="serious">Serious Relationship</option>
+                            <option value="casual">Casual Dating</option>
+                            <option value="friends">Friends</option>
+                            <option value="unsure">Not Sure Yet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ageRange">Preferred Age Range</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="number" id="ageMin" name="ageMin" min="18" max="100" placeholder="Min" style="flex: 1;">
+                            <span>to</span>
+                            <input type="number" id="ageMax" name="ageMax" min="18" max="100" placeholder="Max" style="flex: 1;">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="save-btn" id="saveBtn">
+                    💾 Save Profile
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <p>⏳ Saving your profile...</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <p>✅ Profile saved successfully! You're ready to start dating!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+
+</body>
+</html>

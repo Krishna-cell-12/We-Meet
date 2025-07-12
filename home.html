@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Meet - Find Your Perfect Match</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">We Meet</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="profile-icon">
+                <a href="profile.html" title="Profile">
+                    <img src="https://static.vecteezy.com/system/resources/previews/005/544/753/original/profile-icon-design-free-vector.jpg" alt="Profile" style="width:32px; height:32px; border-radius:50%;">
+                </a>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-hearts">
+            <div class="heart" style="left: 10%; animation-delay: 0.5;">❤️</div>
+            <div class="heart" style="left: 20%; animation-delay: 2s;">💕</div>
+            <div class="heart" style="left: 30%; animation-delay: 4s;">💖</div>
+            <div class="heart" style="left: 40%; animation-delay: 1s;">❤️</div>
+            <div class="heart" style="left: 50%; animation-delay: 3s;">💕</div>
+            <div class="heart" style="left: 60%; animation-delay: 0.01s;">💖</div>
+            <div class="heart" style="left: 70%; animation-delay: 1.5s;">❤️</div>
+            <div class="heart" style="left: 80%; animation-delay: 0.5s;">💕</div>
+            <div class="heart" style="left: 90%; animation-delay: 1.5s;">💖</div>
+        </div>
+        <div class="container">
+            <h1>Match Interests here</h1>
+            <p>Select your interests to find your perfect match!</p>
+            <form class="interests-form" id="interestsForm">
+                <div class="interests-section">
+                    <div class="interests-grid" id="interestsGrid">
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Chatting" checked> <span class="emoji">✅</span> Chatting</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Friendship" checked> <span class="emoji">✅</span> Friendship</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Relationship" checked> <span class="emoji">✅</span> Relationship</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Intimacy"> <span class="emoji">🚫</span> Intimacy</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Love"> <span class="emoji">❤️</span> Love</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Flirting"> <span class="emoji">🍓</span> Flirting</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Anime" checked> <span class="emoji">✅</span> Anime</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Movies" checked> <span class="emoji">✅</span> Movies</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Music" checked> <span class="emoji">✅</span> Music</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Memes" checked> <span class="emoji">✅</span> Memes</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="Sports" checked> <span class="emoji">✅</span> Sports</label>
+                        <label class="interest-label"><input type="checkbox" name="interests" value="IT"> <span class="emoji">🖥️</span> IT</label>
+                    </div>
+                    <div class="add-interest-row">
+                        <input type="text" id="newInterestInput" placeholder="Add more interests...">
+                        <button type="button" id="addInterestBtn" class="btn btn-outline">Add</button>
+                    </div>
+                </div>
+                <style>
+
+                </style>
+                <button type="submit" class="btn btn-primary btn-large" style="margin-top:16px;">Match</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section class="profiles" id="profiles">
+        <div class="container">
+            <h2>Discover New Profiles</h2>
+            <div id="profilesGrid" class="profiles-grid">
+                <!-- Profile cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>We Meet</h3>
+                    <p>Connecting hearts, building relationships, and creating lasting memories since 2025.</p>
+                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 We Meet. All rights reserved. Made with ❤️ for finding friends.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html>
